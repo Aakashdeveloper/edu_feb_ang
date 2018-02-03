@@ -10,6 +10,7 @@ var core_1 = require("@angular/core");
 var ProductComponent = /** @class */ (function () {
     function ProductComponent() {
         this.pageTitle = '*****Product List******';
+        this.imageWidth = 50;
         this.showImage = true;
         this.products = [
             {
@@ -37,16 +38,27 @@ var ProductComponent = /** @class */ (function () {
     ProductComponent.prototype.toogleImage = function () {
         this.showImage = !this.showImage;
     };
+    ProductComponent.prototype.ngOnInit = function () {
+        console.log("<<<<<<<<<<<<<<<<<<init>>>>>>>>>>>>>>>>>>>>>");
+    };
     ProductComponent = __decorate([
         core_1.Component({
             selector: 'edu-prod',
-            templateUrl: 'app/products/product.component.html'
+            templateUrl: 'app/products/product.component.html',
+            //styles:['thead{color:blue;}','h3{color:green;}']
+            styleUrls: ['app/products/product.component.css']
         })
     ], ProductComponent);
     return ProductComponent;
 }());
 exports.ProductComponent = ProductComponent;
 /*
+function add(a){
+    return a+a
+}
+var add =(a)=>{
+    return a+a
+}
 One Way
 --data banding {{}}
 --property binding []

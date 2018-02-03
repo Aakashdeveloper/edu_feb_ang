@@ -1,14 +1,20 @@
-import {Component} from '@angular/core';
+import {Component,OnInit} from '@angular/core';
+import {IProduct} from './products';
 
 @Component({
     selector:'edu-prod',
-    templateUrl:'app/products/product.component.html'
+    templateUrl:'app/products/product.component.html',
+    //styles:['thead{color:blue;}','h3{color:green;}']
+    styleUrls:['app/products/product.component.css']
+    
 })
 
-export class ProductComponent{
+export class ProductComponent implements OnInit{
     pageTitle:string='*****Product List******';
+    filterText:string;
+    imageWidth:number=50;
     showImage:boolean=true;
-    products:any[]=[
+    products:IProduct[]=[
         {
             "productId": 1,
             "productName": "Leaf Rake",
@@ -34,9 +40,19 @@ export class ProductComponent{
     toogleImage():void{
         this.showImage = !this.showImage
     }
+
+    ngOnInit():void{
+        console.log("<<<<<<<<<<<<<<<<<<init>>>>>>>>>>>>>>>>>>>>>")
+    }
 }
 
 /*
+function add(a){
+    return a+a
+}
+var add =(a)=>{
+    return a+a
+} 
 One Way
 --data banding {{}}
 --property binding []
