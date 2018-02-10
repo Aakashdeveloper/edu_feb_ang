@@ -7,15 +7,15 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var OrderComponent = /** @class */ (function () {
-    function OrderComponent() {
+var NotFound = /** @class */ (function () {
+    function NotFound() {
     }
-    OrderComponent = __decorate([
+    NotFound = __decorate([
         core_1.Component({
-            templateUrl: 'app/orders/order.component.html'
+            templateUrl: 'app/shared/notFound.component.html'
         })
-    ], OrderComponent);
-    return OrderComponent;
+    ], NotFound);
+    return NotFound;
 }());
-exports.OrderComponent = OrderComponent;
-//# sourceMappingURL=order.component.js.map
+exports.NotFound = NotFound;
+//# sourceMappingURL=notFound.component.js.map

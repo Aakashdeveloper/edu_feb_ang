@@ -3,9 +3,19 @@ import {Component} from '@angular/core'
 @Component({
     selector:'edu-app',
     template:`<div>
-        <h1>This is main Component</h1>
-        <edu-prod></edu-prod>
-        <robo-edu></robo-edu>
+        <nav class='navbar navbar-inverse'>
+            <div class="container-fluid">
+                <a class="navbar-brand">Angular</a>
+                <ul class="nav navbar-nav">
+                    <li><a [routerLink]="['/home']">Home</a></li>
+                    <li><a [routerLink]="['/products']">Products</a></li>
+                    <li><a [routerLink]="['/orders']">Orders</a></li>
+                </ul>
+            </div>
+        </nav>
+        <div class="container">
+            <router-outlet></router-outlet>
+        </div>
     </div>`
 })
 
