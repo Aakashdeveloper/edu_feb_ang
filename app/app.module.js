@@ -12,16 +12,10 @@ var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
 var router_1 = require("@angular/router");
 var app_component_1 = require("./app.component");
-var robot_component_1 = require("./robot.component");
-var product_component_1 = require("./products/product.component");
-var product_filter_pipe_1 = require("./products/product-filter.pipe");
-var star_component_1 = require("./shared/star.component");
-var product_service_1 = require("./products/product.service");
 var order_component_1 = require("./orders/order.component");
-var product_detail_component_1 = require("./products/product-detail.component");
 var home_component_1 = require("./home/home.component");
 var notFound_component_1 = require("./shared/notFound.component");
-var product_gaurd_service_1 = require("./products/product-gaurd.service");
+var products_module_1 = require("./products/products.module");
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
@@ -30,10 +24,9 @@ var AppModule = /** @class */ (function () {
             imports: [
                 platform_browser_1.BrowserModule,
                 forms_1.FormsModule,
+                products_module_1.ProductModule,
                 http_1.HttpModule,
                 router_1.RouterModule.forRoot([
-                    { path: 'products', component: product_component_1.ProductComponent },
-                    { path: 'products/:id', canActivate: [product_gaurd_service_1.ProductDetailGaurd], component: product_detail_component_1.ProductDetailComponent },
                     { path: 'orders', component: order_component_1.OrderComponent },
                     { path: 'home', component: home_component_1.HomeComponent },
                     { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -42,18 +35,9 @@ var AppModule = /** @class */ (function () {
             ],
             declarations: [
                 app_component_1.AppComponent,
-                robot_component_1.RobotComponent,
-                product_component_1.ProductComponent,
-                product_filter_pipe_1.ProductFilter,
-                star_component_1.StarComponent,
                 order_component_1.OrderComponent,
-                product_detail_component_1.ProductDetailComponent,
                 home_component_1.HomeComponent,
                 notFound_component_1.NotFound
-            ],
-            providers: [
-                product_service_1.ProductService,
-                product_gaurd_service_1.ProductDetailGaurd
             ],
             bootstrap: [
                 app_component_1.AppComponent
